@@ -10,9 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Mini City"
+config/name="Alpha"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Alpha"
 
 [rendering]
 
