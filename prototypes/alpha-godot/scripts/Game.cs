@@ -9,15 +9,14 @@ public enum BuildMode
 
 public partial class Game : Node
 {
-	public BuildMode activeBuildMode = BuildMode.Home;
-
-
+	public BuildMode ActiveBuildMode = BuildMode.Home;
+	
 	[Signal]
 	public delegate void ActiveBuildModeChangedEventHandler();
 
 	public void SetActiveBuildMode(BuildMode mode)
 	{
-		activeBuildMode = mode;
+		ActiveBuildMode = mode;
 		GD.Print("Active build mode changed to " + mode);
 		EmitSignal(SignalName.ActiveBuildModeChanged);
 	}
