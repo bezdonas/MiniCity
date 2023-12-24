@@ -1,4 +1,5 @@
 using Godot;
+using Alpha.models.ActiveBuildMode;
 
 namespace Alpha.views;
 
@@ -19,6 +20,8 @@ public partial class CityTileGrid : TileMap
 	private void HandleClick()
 	{
 		var tilePosition = GetTilePosition();
+		
+		// TODO: crutch
 		if (tilePosition[1] >= 18) // buttons level
 		{
 			return;
@@ -36,16 +39,16 @@ public partial class CityTileGrid : TileMap
 	private Vector2I GetAtlasCoordsByBuildMode()
 	{
 		var houseAtlasCoords = new Vector2I(0, 0);
-		var jobAtlasCoords = new Vector2I(0, 1);
+		var businessAtlasCoords = new Vector2I(0, 1);
 		var roadAtlasCoords = new Vector2I(1, 0);
 		var gameNode = (Game)GetNode("/root/Game");
-		var buildMode = gameNode.ActiveBuildMode;
-
+		var buildMode = gameNode.GameGlobalState.ActiveBuildMode;
+		
 		return buildMode switch
 		{
 			BuildMode.Home => houseAtlasCoords,
 			BuildMode.Road => roadAtlasCoords,
-			BuildMode.Job => jobAtlasCoords,
+			BuildMode.Business => businessAtlasCoords,
 			_ => houseAtlasCoords
 		};
 	}

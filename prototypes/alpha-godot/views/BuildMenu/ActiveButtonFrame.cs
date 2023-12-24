@@ -1,36 +1,30 @@
 using Godot;
+using PubSub;
+using Alpha.models.ActiveBuildMode;
 
 namespace Alpha.views.BuildMenu;
 
 public partial class ActiveButtonFrame : TextureRect
 {
-  public override void _Ready()
-  {
-	var gameNode = (Game)GetNode("/root/Game");
-	gameNode.ActiveBuildModeChanged += UpdatePosition;
-  }
+    private readonly Hub _hub = Hub.Default;
 
-  private void UpdatePosition()
-  {
-	var gameNode = (Game)GetNode("/root/Game");
-	float[] offset = { 0, 0 };
-	switch (gameNode.ActiveBuildMode)
-	{
-	  case BuildMode.Home:
-		offset = new float[] { 485, 614 };
-		break;
-	  case BuildMode.Job:
-		offset = new float[] { 547, 615 };
-		break;
-	  case BuildMode.Road:
-		offset = new float[] { 601, 617 };
-		break;
-	  default:
-		Visible = false;
-		break;
-	}
+    public override void _Ready()
+    {
+        _hub.Subscribe<BuildMode>(this, UpdatePosition);
+    }
 
-	var offsetVector = new Vector2(offset[0], offset[1]);
-	Position = offsetVector;
-  }
+    private void UpdatePosition(BuildMode activeBuildMode)
+    {
+        // TODO: crutch
+        var offset = activeBuildMode switch
+        {
+            BuildMode.Home => new float[] { 485, 614 },
+            BuildMode.Business => new float[] { 547, 615 },
+            BuildMode.Road => new float[] { 601, 617 },
+            _ => new float[] { 0, 0 }
+        };
+
+        var offsetVector = new Vector2(offset[0], offset[1]);
+        Position = offsetVector;
+    }
 }

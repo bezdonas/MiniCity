@@ -8,4 +8,10 @@
   <ItemGroup>
     <Content Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="PubSub" Version="4.0.2" />
+  </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 using Godot;
+using Alpha.models.ActiveBuildMode;
 
 namespace Alpha.views.BuildMenu;
 
@@ -7,7 +8,7 @@ public partial class BuildJobButton : TextureButton
   public override void _Pressed()
   {
 	var gameNode = GetGameNode();
-	gameNode.SetActiveBuildMode(BuildMode.Job);
+	gameNode.GameGlobalState.ActiveBuildMode = BuildMode.Business;
   }
 
   private Game GetGameNode()
