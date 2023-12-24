@@ -1,5 +1,7 @@
 using Godot;
 
+namespace Alpha.nodes;
+
 public enum BuildMode
 {
 	Home,

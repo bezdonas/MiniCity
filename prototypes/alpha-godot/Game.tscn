@@ -1,18 +1,18 @@
 [gd_scene load_steps=18 format=3 uid="uid://b3u0ivq2tw8ab"]
 
-[ext_resource type="Script" path="res://scripts/Game.cs" id="1_8jn23"]
+[ext_resource type="Script" path="res://nodes/Game.cs" id="1_2m6uq"]
 [ext_resource type="Texture2D" uid="uid://d1juoealrx51t" path="res://assets/cityBackground.png" id="1_g1yng"]
 [ext_resource type="Texture2D" uid="uid://c8prrxib4wfi6" path="res://assets/RoadsBuildings.png" id="2_fj12o"]
 [ext_resource type="Texture2D" uid="uid://dtivc2kafubxd" path="res://assets/Grid.png" id="3_ggcjk"]
 [ext_resource type="Texture2D" uid="uid://c08n7p6kirl1h" path="res://assets/HomeButton.png" id="4_p8yra"]
-[ext_resource type="Script" path="res://scripts/CityTileGrid.cs" id="5_aac2p"]
 [ext_resource type="Texture2D" uid="uid://djj5iw2dq2bni" path="res://assets/BusinessButton.png" id="5_nqxk1"]
-[ext_resource type="Script" path="res://scripts/BuildMenu/BuildHouseButton.cs" id="6_hy4uq"]
-[ext_resource type="Script" path="res://scripts/BuildMenu/BuildJobButton.cs" id="8_8rkmh"]
+[ext_resource type="Script" path="res://nodes/CityTileGrid.cs" id="5_t7yo4"]
+[ext_resource type="Script" path="res://nodes/BuildMenu/ActiveButtonFrame.cs" id="7_eyo1p"]
+[ext_resource type="Script" path="res://nodes/BuildMenu/BuildHouseButton.cs" id="9_l0gmy"]
 [ext_resource type="Texture2D" uid="uid://blngwy5aeh7ho" path="res://assets/RoadButton.png" id="9_wgew6"]
-[ext_resource type="Script" path="res://scripts/BuildMenu/BuildRoadButton.cs" id="10_npfn7"]
 [ext_resource type="Texture2D" uid="uid://c8dxum0tw6lwx" path="res://assets/activeButton.png" id="11_3ba4d"]
-[ext_resource type="Script" path="res://scripts/BuildMenu/ActiveButtonFrame.cs" id="12_amcwn"]
+[ext_resource type="Script" path="res://nodes/BuildMenu/BuildJobButton.cs" id="11_nhgvv"]
+[ext_resource type="Script" path="res://nodes/BuildMenu/BuildRoadButton.cs" id="13_4sksj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ael7j"]
 texture = ExtResource("1_g1yng")
@@ -48,7 +48,7 @@ sources/2 = SubResource("TileSetAtlasSource_bqie8")
 
 [node name="Game" type="Node2D"]
 position = Vector2(16, -20)
-script = ExtResource("1_8jn23")
+script = ExtResource("1_2m6uq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(551, 344)
@@ -63,7 +63,7 @@ layer_1/name = "Grid"
 layer_1/tile_data = PackedInt32Array()
 layer_2/name = "RoadBuildings"
 layer_2/tile_data = PackedInt32Array()
-script = ExtResource("5_aac2p")
+script = ExtResource("5_t7yo4")
 
 [node name="BuildMenu" type="Node2D" parent="."]
 position = Vector2(2.08165e-12, -20)
@@ -74,7 +74,7 @@ offset_top = 615.0
 offset_right = 526.0
 offset_bottom = 655.0
 texture = ExtResource("11_3ba4d")
-script = ExtResource("12_amcwn")
+script = ExtResource("7_eyo1p")
 
 [node name="BuildHouseButton" type="TextureButton" parent="BuildMenu"]
 anchors_preset = 7
@@ -89,7 +89,7 @@ offset_bottom = 650.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("4_p8yra")
-script = ExtResource("6_hy4uq")
+script = ExtResource("9_l0gmy")
 
 [node name="BuildJobButton" type="TextureButton" parent="BuildMenu"]
 anchors_preset = 7
@@ -104,7 +104,7 @@ offset_bottom = 650.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("5_nqxk1")
-script = ExtResource("8_8rkmh")
+script = ExtResource("11_nhgvv")
 
 [node name="BuildRoadButton" type="TextureButton" parent="BuildMenu"]
 anchors_preset = 7
@@ -119,4 +119,4 @@ offset_bottom = 650.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("9_wgew6")
-script = ExtResource("10_npfn7")
+script = ExtResource("13_4sksj")

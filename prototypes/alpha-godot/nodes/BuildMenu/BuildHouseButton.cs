@@ -1,5 +1,7 @@
 using Godot;
 
+namespace Alpha.nodes.BuildMenu;
+
 public partial class BuildHouseButton : TextureButton
 {
 	public override void _Pressed()
