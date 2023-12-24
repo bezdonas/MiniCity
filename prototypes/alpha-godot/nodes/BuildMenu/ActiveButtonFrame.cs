@@ -6,15 +6,15 @@ public partial class ActiveButtonFrame : TextureRect
 {
   public override void _Ready()
   {
-	var GameNode = (Game)GetNode("/root/Game");
-	GameNode.ActiveBuildModeChanged += () => UpdatePosition();
+	var gameNode = (Game)GetNode("/root/Game");
+	gameNode.ActiveBuildModeChanged += UpdatePosition;
   }
 
-  void UpdatePosition()
+  private void UpdatePosition()
   {
-	var GameNode = (Game)GetNode("/root/Game");
+	var gameNode = (Game)GetNode("/root/Game");
 	float[] offset = { 0, 0 };
-	switch (GameNode.ActiveBuildMode)
+	switch (gameNode.ActiveBuildMode)
 	{
 	  case BuildMode.Home:
 		offset = new float[] { 485, 614 };

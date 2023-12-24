@@ -6,11 +6,11 @@ public partial class BuildHouseButton : TextureButton
 {
 	public override void _Pressed()
 	{
-		Game GameNode = GetGameNode();
-		GameNode.SetActiveBuildMode(BuildMode.Home);
+		var gameNode = GetGameNode();
+		gameNode.SetActiveBuildMode(BuildMode.Home);
 	}
 
-	public Game GetGameNode()
+	private Game GetGameNode()
 	{
 		return (Game)GetNode("/root/Game");
 	}
