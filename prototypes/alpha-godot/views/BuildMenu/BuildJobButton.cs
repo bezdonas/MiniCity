@@ -1,13 +1,13 @@
 using Godot;
 
-namespace Alpha.nodes.BuildMenu;
+namespace Alpha.views.BuildMenu;
 
-public partial class BuildRoadButton : TextureButton
+public partial class BuildJobButton : TextureButton
 {
   public override void _Pressed()
   {
 	var gameNode = GetGameNode();
-	gameNode.SetActiveBuildMode(BuildMode.Road);
+	gameNode.SetActiveBuildMode(BuildMode.Job);
   }
 
   private Game GetGameNode()

@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Alpha.nodes.BuildMenu;
+namespace Alpha.views.BuildMenu;
 
 public partial class BuildHouseButton : TextureButton
 {

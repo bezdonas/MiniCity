@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Alpha.nodes;
+namespace Alpha.views;
 
 public partial class CityTileGrid : TileMap
 {

@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Alpha.nodes;
+namespace Alpha.views;
 
 public enum BuildMode
 {
