@@ -1,6 +1,6 @@
 using Godot;
 using PubSub;
-using Alpha.models.ActiveBuildMode;
+using Alpha.models;
 
 namespace Alpha.views.BuildMenu;
 

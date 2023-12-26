@@ -11,8 +11,4 @@ public partial class Game : Node
 	{
 		GD.Print("Game ready");
 	}
-
-	public override void _Process(double delta)
-	{
-	}
 }

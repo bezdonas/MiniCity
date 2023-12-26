@@ -1,5 +1,5 @@
 using Godot;
-using Alpha.models.ActiveBuildMode;
+using Alpha.models;
 
 namespace Alpha.views.BuildMenu;
 

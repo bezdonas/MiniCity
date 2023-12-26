@@ -1,5 +1,5 @@
 using Godot;
-using Alpha.models.ActiveBuildMode;
+using Alpha.models;
 
 namespace Alpha.views;
 
@@ -20,7 +20,7 @@ public partial class CityTileGrid : TileMap
 	private void HandleClick()
 	{
 		var tilePosition = GetTilePosition();
-		
+		GD.Print(tilePosition);
 		// TODO: crutch
 		if (tilePosition[1] >= 18) // buttons level
 		{

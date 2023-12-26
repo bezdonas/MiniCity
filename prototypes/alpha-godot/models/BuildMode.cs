@@ -1,8 +1,9 @@
-namespace Alpha.models.ActiveBuildMode;
+namespace Alpha.models;
 
 public enum BuildMode
 {
     Home,
     Business,
-    Road
+    Road,
+    Remove,
 }
