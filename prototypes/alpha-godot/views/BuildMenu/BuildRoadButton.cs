@@ -5,14 +5,15 @@ namespace Alpha.views.BuildMenu;
 
 public partial class BuildRoadButton : TextureButton
 {
-  public override void _Pressed()
-  {
-	var gameNode = GetGameNode();
-	gameNode.GameGlobalState.ActiveBuildMode = BuildMode.Road;
-  }
+    private readonly GlobalState _globalState = GlobalState.Instance;
 
-  private Game GetGameNode()
-  {
-	return (Game)GetNode("/root/Game");
-  }
+    public override void _Pressed()
+    {
+        _globalState.ActiveBuildMode = BuildMode.Road;
+    }
+
+    private Game GetGameNode()
+    {
+        return (Game)GetNode("/root/Game");
+    }
 }

@@ -4,6 +4,5 @@ public enum BuildMode
 {
     Home,
     Business,
-    Road,
-    Remove,
+    Road
 }
