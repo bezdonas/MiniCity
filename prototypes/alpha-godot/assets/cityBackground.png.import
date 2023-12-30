@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2q1cefv7nag8"
-path="res://.godot/imported/RoadsBuildings.png-16d3d49c5d1feb1adcc9d40dffe7fbf5.ctex"
+uid="uid://d1juoealrx51t"
+path="res://.godot/imported/cityBackground.png-da44e89e9b556edc6701db6573b61bf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/RoadsBuildings.png"
-dest_files=["res://.godot/imported/RoadsBuildings.png-16d3d49c5d1feb1adcc9d40dffe7fbf5.ctex"]
+source_file="res://assets/cityBackground.png"
+dest_files=["res://.godot/imported/cityBackground.png-da44e89e9b556edc6701db6573b61bf6.ctex"]
 
 [params]
 
